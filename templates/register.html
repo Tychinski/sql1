@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Страница регистрации</title>
+</head>
+<body>
+    <h1>Форма регистрации</h1>
+    <form method="POST" action="/register" onsubmit="return validateForm()">
+        <label for="username">Имя пользователя:</label>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="password">Пароль:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <input type="submit" value="Зарегистрироваться">
+    </form>
+
+    <script>
+        function validateForm() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if (username.trim() === "" || password.trim() === "") {
+                alert("Пожалуйста, заполните все поля");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>
